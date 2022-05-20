@@ -4,9 +4,6 @@ module.exports = {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      'sans': ['"Proxima Nova"']
-    },
     extend: {
       backgroundImage: {
         'mugshot': "url('src/assets/img/mugshot.jpg')",

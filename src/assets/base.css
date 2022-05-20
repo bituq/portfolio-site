@@ -2,6 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+	font-family: 'FiraCode', monospace;
+	src: url(fonts/FiraCode.ttf);
+}
+
+@font-face {
+	font-family: 'ProximaNova';
+	src: url(fonts/ProximaNova.otf);
+}
+
+.font-proxima {
+	font-family: 'ProximaNova';
+}
+
 .font-koulen {
 	font-family: 'Koulen', cursive;
 }
