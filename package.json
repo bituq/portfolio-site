@@ -9,6 +9,8 @@
     "typecheck": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
+    "daisyui": "^2.15.2",
+    "gsap": "^3.10.4",
     "pinia": "^2.0.13",
     "vue": "^3.2.33",
     "vue-router": "^4.0.14"
