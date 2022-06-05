@@ -35,8 +35,7 @@ onMounted(() => {
       snap: {
         snapTo: "labels",
         duration: {min: .2, max: 1},
-        delay: .2,
-        ease: "expo.out"
+        ease: "power2.out"
       }
     }
   })
@@ -82,7 +81,7 @@ onMounted(() => {
 
         <!-- Main Content -->
         <main ref="mainContent" class="flex flex-col h-[100vh] justify-center gap-10 text-base-content">
-          <div ref="explanationRef" class="flex flex-col gap-5 px-28">
+          <div ref="explanationRef" class="flex flex-col gap-5 pt-12 px-28">
             <h1>Dylan Noorland</h1>
             <p id="mainContent" class="text-xl mt-5">
               Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam. <b>Informatica is mijn passie</b>, waardoor ik snel nieuwe vaardigheden leer. Collega’s omschrijven mij als initiatiefnemend, probleemoplossend, en professioneel.
