@@ -51,6 +51,9 @@ onMounted(() => {
     .to("#skillsList", { opacity: 0, translateY: "-150%" }, "+=.5")
     .fromTo("#jobsList", {opacity: 0}, { translateY: "-100%", opacity: 1 }, "-=.5")
     .addLabel("jobs")
+    .to("#jobsList", { opacity: 0, translateY: "-150%" } , "+=.5")
+    .fromTo("#gradesList", { opacity: 0 }, { translateY: "-650%", opacity: 1 }, "-=.5")
+    .addLabel("grades")
 })
 
 </script>
@@ -81,7 +84,7 @@ onMounted(() => {
 
         <!-- Main Content -->
         <main ref="mainContent" class="flex flex-col h-[100vh] justify-center gap-10 text-base-content">
-          <div ref="explanationRef" class="flex flex-col gap-5 pt-12 px-28">
+          <div ref="explanationRef" class="flex flex-col gap-5 pt-24 px-28">
             <h1>Dylan Noorland</h1>
             <p id="mainContent" class="text-xl mt-5">
               Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam. <b>Informatica is mijn passie</b>, waardoor ik snel nieuwe vaardigheden leer. Collega’s omschrijven mij als initiatiefnemend, probleemoplossend, en professioneel.
@@ -107,7 +110,7 @@ onMounted(() => {
                 <div class="skill-item">
                   <img src="@/assets/img/vue.png" />
                   <h4>Vue</h4>
-                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="4" max="5" />
+                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="5" max="5" />
                 </div>
                 <div class="skill-item">
                   <img src="@/assets/img/ts.png" />
@@ -136,7 +139,7 @@ onMounted(() => {
                 </div>
               </div>
             </div>
-          <div id="mainContent" class="flex flex-col justify-center mt-10">
+          <div id="mainContent" class="flex flex-col justify-center">
             <div id="jobsList" class="flex flex-row gap-5 px-28">
               <job-item :startYear="2020" :endYear="0">
                 <template #title>
@@ -173,6 +176,32 @@ onMounted(() => {
               </job-item>
             </div>
           </div>
+          <div id="gradesList" class="flex flex-row gap-5 justify-center">
+            <div id="grade" class="flex flex-col items-center justify-center">
+              <h2>9.9</h2>
+              <h4>Informatica Eindproject</h4>
+            </div>
+            <div id="grade" class="flex flex-col items-center justify-center">
+              <h2>8.3</h2>
+              <h4>Concurrency</h4>
+            </div>
+            <div id="grade" class="flex flex-col items-center justify-center">
+              <h2>10.0</h2>
+              <h4>Object-Oriented Programming</h4>
+            </div>
+            <div id="grade" class="flex flex-col items-center justify-center">
+              <h2>10.0</h2>
+              <h4>Static Typing in C#</h4>
+            </div>
+            <div id="grade" class="flex flex-col items-center justify-center">
+              <h2>10.0</h2>
+              <h4>Higher Order Functions</h4>
+            </div>
+            <div id="grade" class="flex flex-col items-center justify-center">
+              <h2>7.7</h2>
+              <h4>Functions, Combinatronics & Probability</h4>
+            </div>
+          </div>
         </main>
       </div>
     </div>
@@ -201,5 +230,9 @@ onMounted(() => {
   @apply h-10;
   @apply object-contain;
   @apply flex-grow;
+}
+
+#grade {
+  @apply text-center;
 }
 </style>
