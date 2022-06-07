@@ -4,10 +4,8 @@ import { RouterLink, RouterView } from "vue-router";
 import JobItem from "./components/JobItem.vue";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Flip } from "gsap/Flip"
 
 gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(Flip)
 
 let themeIsLight = ref(true)
 let theme = computed(() => themeIsLight.value ? 'light' : 'dark')
@@ -23,13 +21,18 @@ onMounted(() => {
   //   .from("#mainContent", { opacity: 0, duration: 1}, "-=1")
   //   .from("#jobsList", { translateX: "100%", duration: 2 }, "-=2")
 
+  let tl = gsap.timeline()
+
+  tl.from("#dylan", { marginLeft: -200, opacity: 0, duration: 1, ease: "power2.out"})
+    .from("#noorland", { marginLeft: -200, opacity: 0, duration: 1, ease: "power2.out"}, "-=.75")
+
   gsap.from("#scrollArrowDown", {translateY: -5, repeat: -1, yoyo: true, ease: "power3.in"})
   
   let scrollTl = gsap.timeline({
     scrollTrigger: {
       trigger: "#pin",
       start: "center center",
-      end: "+=1000",
+      end: "max",
       scrub: 1,
       pin: true,
       snap: {
@@ -42,24 +45,25 @@ onMounted(() => {
 
   scrollTl.addLabel("start")
     .fromTo(scrollContent.value, { opacity: 1 }, { opacity: 0 })
-    .from(mainContent.value, { translateY: "25%", ease: "power3.inOut" } , "-=0.5")
-    .to(explanationRef.value.querySelector(".divider"), { opacity: 0}, "=-0.5")
-    .to("#leftRect", { translateY: 20, top: 0, ease: "power3.inOut" }, "-=0.5")
+    .from(mainContent.value, { translateY: "25%", ease: "power3.inOut", duration: 2 } , "-=0.5")
+    .to("#selfDescription", {opacity: 0, duration: 1}, "-=2")
+    .to(explanationRef.value.querySelector(".divider"), { translateY: -100, duration: 1}, "=-1")
+    .to("#leftRect", { translateY: 20, top: 0, ease: "power3.inOut", duration: 2 }, "-=2")
     .fromTo("#skillsList", { opacity: 0 }, { translateY: "-100%", opacity: 1 }, "-=.25")
     .from(".skill-item progress", { value: 0 }, "-=.5")
     .addLabel("skills")
-    .to("#skillsList", { opacity: 0, translateY: "-150%" }, "+=.5")
+    .to("#skillsList", { opacity: 0, translateY: "-120%" }, "+=.5")
     .fromTo("#jobsList", {opacity: 0}, { translateY: "-100%", opacity: 1 }, "-=.5")
     .addLabel("jobs")
-    .to("#jobsList", { opacity: 0, translateY: "-150%" } , "+=.5")
-    .fromTo("#gradesList", { opacity: 0 }, { translateY: "-650%", opacity: 1 }, "-=.5")
+    .to("#jobsList", { opacity: 0, translateY: "-120%" } , "+=.5")
+    .fromTo("#gradesList", { opacity: 0 }, { translateY: "-550%", opacity: 1 }, "-=.5")
     .addLabel("grades")
 })
 
 </script>
 
 <template>
-  <main :data-theme="theme" class="flex justify-center w-full h-[200vh] bg-base-300">
+  <main :data-theme="theme" class="flex justify-center w-full h-[300vh] bg-base-300">
     <div id="mainContainer" class="fixed bg-base-100 max-w-[1080px] h-full">
       <div id="pin">
         <!-- Shapes -->
@@ -76,18 +80,14 @@ onMounted(() => {
               </li>
             </ul>
           </div>
-          <img
-            class="absolute right-0 bottom-0 object-cover h-[80%] rounded"
-            src="@/assets/img/mugshot_transparent.png"
-          />
         </div>
 
         <!-- Main Content -->
         <main ref="mainContent" class="flex flex-col h-[100vh] justify-center gap-10 text-base-content">
-          <div ref="explanationRef" class="flex flex-col gap-5 pt-24 px-28">
-            <h1>Dylan Noorland</h1>
-            <p id="mainContent" class="text-xl mt-5">
-              Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam. <b>Informatica is mijn passie</b>, waardoor ik snel nieuwe vaardigheden leer. Collega’s omschrijven mij als initiatiefnemend, probleemoplossend, en professioneel.
+          <div ref="explanationRef" class="flex flex-col gap-5 px-28">
+            <h1 class="flex flex-col"><span id="dylan">Dylan</span> <span id="noorland">Noorland</span></h1>
+            <p id="selfDescription" class="text-xl mt-5">
+              Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam, en <b>Informatica is mijn passie</b>.
             </p>
             <div id="mainContent" class="divider" />
             <h3 id="mainContent">
@@ -176,7 +176,7 @@ onMounted(() => {
               </job-item>
             </div>
           </div>
-          <div id="gradesList" class="flex flex-row gap-5 justify-center">
+          <div id="gradesList" class="flex flex-row gap-5 justify-center px-28">
             <div id="grade" class="flex flex-col items-center justify-center">
               <h2>9.9</h2>
               <h4>Informatica Eindproject</h4>
@@ -234,5 +234,9 @@ onMounted(() => {
 
 #grade {
   @apply text-center;
+}
+
+#grade h4 {
+  @apply flex-grow;
 }
 </style>
