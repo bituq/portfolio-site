@@ -4,14 +4,14 @@
 			<slot name="title"/>
 		</h3>
 		<div class="divider" />
-		<p class="font-semibold">
+		<p class="font-semibold flex-shrink">
 			<slot name="place" />
 		</p>
 		<p class="mt-2">
 		{{ props['startYear'] }} - {{ props['endYear'] == 0 ? "Heden" : props['endYear'] }}
 		</p>
 		<div class="divider" />
-		<p>
+		<p id="jobItemDescription" class="flex-grow">
 			<slot name="description" />
 		</p>
 	</div>
@@ -29,6 +29,6 @@ let props = defineProps<{
 .job-item {
   @apply flex;
   @apply flex-col;
-  @apply max-w-[20rem];
+  @apply w-[20rem];
 }
 </style>

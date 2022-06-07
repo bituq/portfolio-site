@@ -4,8 +4,10 @@ import { RouterLink, RouterView } from "vue-router";
 import JobItem from "./components/JobItem.vue";
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { TextPlugin } from "gsap/TextPlugin"
 
 gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(TextPlugin)
 
 let themeIsLight = ref(true)
 let theme = computed(() => themeIsLight.value ? 'light' : 'dark')
@@ -50,13 +52,13 @@ onMounted(() => {
     .to(explanationRef.value.querySelector(".divider"), { translateY: -100, duration: 1}, "=-1")
     .to("#leftRect", { translateY: 20, top: 0, ease: "power3.inOut", duration: 2 }, "-=2")
     .fromTo("#skillsList", { opacity: 0 }, { translateY: "-100%", opacity: 1 }, "-=.25")
-    .from(".skill-item progress", { value: 0 }, "-=.5")
+    .from(".skill-item progress", { value: 0 }, "-=.25")
     .addLabel("skills")
     .to("#skillsList", { opacity: 0, translateY: "-120%" }, "+=.5")
     .fromTo("#jobsList", {opacity: 0}, { translateY: "-100%", opacity: 1 }, "-=.5")
     .addLabel("jobs")
-    .to("#jobsList", { opacity: 0, translateY: "-120%" } , "+=.5")
-    .fromTo("#gradesList", { opacity: 0 }, { translateY: "-550%", opacity: 1 }, "-=.5")
+    .to("#jobsList", { opacity: 0, translateY: "-120%" } , "+=1")
+    .fromTo("#gradesList", { opacity: 0 }, { translateY: "-600%", opacity: 1 }, "-=.5")
     .addLabel("grades")
 })
 
