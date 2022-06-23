@@ -48,18 +48,26 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	@apply text-9xl;
+	@apply text-7xl;
+	@apply sm:text-9xl;
 	@apply font-extrabold;
+	@apply text-base-300
 }
 
 h2 {
-	@apply text-4xl;
+	@apply text-6xl;
+	@apply sm:text-8xl;
+	@apply text-base-300
 }
 
 h3 {
-	@apply text-2xl;
+	@apply text-4xl;
 }
 
 h4 {
+	@apply text-2xl;
+}
+
+h5 {
 	@apply text-lg;
 }

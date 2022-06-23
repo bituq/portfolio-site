@@ -1,0 +1,23 @@
+[
+	{
+		"position": "Oprichter",
+		"where": "Zeal Software Applications",
+		"from": 2022,
+		"until": 0,
+		"description": "Software-ontwikkelaar, customer-support, en internationale samenwerking. Meer dan 5,000,000 gebruikers wereldwijd."
+	},
+	{
+		"position": "Bachelor Informatica Voltijd",
+		"where": "Hogeschool Rotterdam",
+		"from": 2020,
+		"until": 0,
+		"description": "Bij deze opleiding tot software-engineer, leer ik waardevolle lessen over communicatie, software-ontwikkeling, Scrum methodologie, en software design."
+	},
+	{
+		"position": "Havo Natuur & Techniek",
+		"where": "De Ring van Putten",
+		"from": 2015,
+		"until": 2020,
+		"description": "Ik scoorde een 9.9 voor het eindproject van het vak Informatica. Hiervoor heb ik een website gebouwd dat geïnspireerd is door Twitter. Gemaakt in PHP, javascript, en HTML."
+	}
+]

@@ -1,19 +1,20 @@
 <template>
-	<div class="job-item">
-		<h3 class="flex-grow">
-			<slot name="title"/>
-		</h3>
-		<div class="divider" />
-		<p class="font-semibold flex-shrink">
-			<slot name="place" />
-		</p>
-		<p class="mt-2">
-		{{ props['startYear'] }} - {{ props['endYear'] == 0 ? "Heden" : props['endYear'] }}
-		</p>
-		<div class="divider" />
-		<p id="jobItemDescription" class="flex-grow">
-			<slot name="description" />
-		</p>
+	<div class="card card-compact shadow-xl">
+		<div class="card-body">
+			<h3 class="flex-grow card-title">
+				<slot name="title"/>
+			</h3>
+			<p class="font-semibold">
+				<slot name="place" />
+			</p>
+			<p class="mt-2">
+			{{ props['startYear'] }} - {{ props['endYear'] == 0 ? "Heden" : props['endYear'] }}
+			</p>
+			<div class="divider" />
+			<p id="jobItemDescription" class="flex-grow">
+				<slot name="description" />
+			</p>
+		</div>
 	</div>
 </template>
 

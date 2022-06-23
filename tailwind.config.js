@@ -1,3 +1,9 @@
+defaultTheme = {
+  primary: "#2A71FF",
+  secondary: "#FFC55A",
+  accent: "#DA5EE0"
+}
+
 module.exports = {
   content: [
     "./index.html",
@@ -16,7 +22,16 @@ module.exports = {
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
-      "dark", "light"
+      {
+        light: {
+          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
+          ...defaultTheme
+        },
+        dark: {
+          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
+          ...defaultTheme
+        }
+      }
     ]
   }
 }

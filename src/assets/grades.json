@@ -1,0 +1,24 @@
+[
+	{
+		"grade": 9.9,
+		"for": "Informatica Eindproject",
+		"description": "Dit cijfer heb ik behaald in mijn laatste jaar van de middelbare school. Ik heb een basisfunctioneel sociaal platform gemaakt waarop studenten vragen kunnen stellen aan docenten en medestudenten. Het is geschreven in Javascript, HTML en PHP. Ik had hiermee het hoogste cijfer."
+	},
+  	{
+		"grade": 8.3,
+		"for": "Concurrency",
+		"description": "Ik kan de concepten van concurrency, parallelisme, multi-processing, multi-threading, en asynchrone operaties beschrijven. Bovendien kan ik resource sharing toepassen, data-races voorkomen, en inter-process communicatie maken."
+	},
+  	{
+		"grade": 10.0,
+		"for": "Object-Oriented-Programming",
+		"description": "Ik kan bekende object-geörienteerde concepten beschrijven en toepassen in systeem analyse, design, en implementatie. Bovendien kan ik requirement formuleren, en een systeem ontwerpen doormiddel van UML, Use Case en Class diagrammen."
+	},
+  	{"grade": 10.0, "for": "Static Typing in C#"},
+  	{"grade": 10.0, "for": "Higher Order Functions"},
+  	{
+		"grade": 7.7,
+		"for": "Functions, Combinatronics & Probability",
+		"description": "Met dit cijfer was ik de beste student van 170 deelnemers. Ik kan beschrijven wat functies en relaties zijn, en deze toepassen in programmeertalen. Bovendien kan ik functies van hogere orde maken, en begrijp ik de basis van combinatoriek. Tot slot kan ik in simpele experimenten kans berekenen, en probabilistische methoden toepassen om optimalisatieproblemen op te lossen."
+	}
+]

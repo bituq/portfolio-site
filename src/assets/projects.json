@@ -1,0 +1,29 @@
+[
+	{
+		"name": "Roshade",
+		"img": "roshade.png",
+		"shortDescription": "Een installatiepakket gemaakt in NSIS voor het installeren van Reshade.",
+		"url": "https://github.com/bituq/Roshade"
+	},
+	{
+		"name": "Rim-light Shader",
+		"img": "rimLighting.jpg",
+		"shortDescription": "Een randverlichting-shader die het effect van licht rond objecten benadrukt. Het kan handig zijn voor filmische toepassingen.",
+		"url": "https://github.com/bituq/ZealShaders"
+	},
+	{
+		"name": "C# Sorteer Algoritmes",
+		"shortDescription": "Momenteel is alleen een asynchroon merge-sort algoritme geïmplementeerd.",
+		"url": "https://github.com/bituq/CsharpSorting/blob/master/Sorting.Algorithms/SortingAlgorithms.cs"
+	},
+	{
+		"name": "RoKlein",
+		"shortDescription": "Een compact, asynchroon, en declaratief UI library gemaakt in LUA.",
+		"url": "https://github.com/bituq/RoKlein"
+	},
+	{
+		"name": "C# Design Patterns",
+		"shortDescription": "Ontwerp patronen in C#. Momenteel is alleen een 'observable' geïmplementeerd.",
+		"url": "https://github.com/bituq/DesignPatterns"
+	}
+]

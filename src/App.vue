@@ -1,78 +1,32 @@
-<script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
-import { RouterLink, RouterView } from "vue-router";
-import JobItem from "./components/JobItem.vue";
-import gsap from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { TextPlugin } from "gsap/TextPlugin"
-
-gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(TextPlugin)
-
-let themeIsLight = ref(true)
-let theme = computed(() => themeIsLight.value ? 'light' : 'dark')
-let scrollContent = ref()
-let mainContent = ref()
-let explanationRef = ref()
-
-onMounted(() => {
-  // let tl = gsap.timeline()
-  // tl.from("#mainContainer", { width: "100%", duration: 2, ease: "power2.out"})
-  //   .fromTo("#leftRect", { opacity: 0, left: "-400", }, { left: 0, opacity: 1, duration: 2, ease: "power3.out" }, "-=1")
-  //   .from("h1", {marginLeft: "-100%", duration: 2, ease: "power4.out", delay: .2 }, "-=1.5")
-  //   .from("#mainContent", { opacity: 0, duration: 1}, "-=1")
-  //   .from("#jobsList", { translateX: "100%", duration: 2 }, "-=2")
-
-  let tl = gsap.timeline()
-
-  tl.from("#dylan", { marginLeft: -200, opacity: 0, duration: 1, ease: "power2.out"})
-    .from("#noorland", { marginLeft: -200, opacity: 0, duration: 1, ease: "power2.out"}, "-=.75")
-
-  gsap.from("#scrollArrowDown", {translateY: -5, repeat: -1, yoyo: true, ease: "power3.in"})
-  
-  let scrollTl = gsap.timeline({
-    scrollTrigger: {
-      trigger: "#mainContainer",
-      start: () => window.innerHeight / 2 + " center",
-      end: () => "max",
-      markers: true,
-      scrub: 1,
-      snap: {
-        snapTo: "labels",
-        duration: {min: .2, max: 1},
-        ease: "power2.out"
-      }
-    }
-  })
-
-  scrollTl.addLabel("start")
-    .fromTo(scrollContent.value, { opacity: 1 }, { opacity: 0 })
-    .from(explanationRef.value, { translateY: "60%", ease: "power3.inOut", duration: 2 } , "-=0.5")
-    .to("#selfDescription", {opacity: 0, duration: 1}, "-=2")
-    .to(explanationRef.value.querySelector(".divider"), { translateY: -100, duration: 1}, "=-1")
-    .to("#leftRect", { translateY: 20, top: 0, ease: "power3.inOut", duration: 2 }, "-=2")
-    .fromTo("#skillsList", { opacity: 0 }, { translateY: "-100%", opacity: 1 }, "-=.25")
-    .from(".skill-item progress", { value: 0 }, "-=.25")
-    .addLabel("skills")
-    .to("#skillsList", { opacity: 0, translateY: "-120%" }, "+=.5")
-    .fromTo("#jobsList", {opacity: 0}, { translateY: "-100%", opacity: 1 }, "-=.5")
-    .addLabel("jobs")
-    .to("#jobsList", { opacity: 0, translateY: "-120%" } , "+=1")
-    .fromTo("#gradesList", { opacity: 0 }, { translateY: "-600%", opacity: 1 }, "-=.5")
-    .addLabel("grades")
-})
-
-</script>
-
 <template>
-  <main :data-theme="theme" class="flex justify-center w-full h-[300vh] bg-base-300">
-    <div id="mainContainer" class="flex justify-center h-full">
-      <div id="pin" class="fixed bg-base-100 max-w-[1080px] h-full">
+  <header class="visible xl:invisible bg-neutral bg-opacity-50 backdrop-blur-sm z-20 h-20 fixed w-full">
+    <div class="p-4 flex flex-row gap-5 items-center justify-between">
+      <div class="list-item form-control text-white flex-row items-center">
+        <label class="label cursor-pointer">Donker</label>
+        <input type="checkbox" class="toggle toggle-lg toggle-secondary z-10" v-model="themeIsLight" checked />
+        <label class="label cursor-pointer">Licht</label>
+      </div>
+      <!-- Personal Information -->
+      <div>
+        <div class="list-item text-white"><span class="material-icons">email</span>zealbus@outlook.com</div>
+        <div class="list-item text-white">
+          <span class="material-icons">contact_page</span><a class="underline z-10" href="https://www.linkedin.com/in/dylan-noorland-56169019b/">LinkedIn Profiel</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main :data-theme="theme" class="flex justify-center w-full bg-base-300">
+    <div class="flex justify-center w-[1024px] h-full bg-base-100 overflow-clip">
+      <main class="flex flex-col gap-5 text-base-content w-[85%] pb-48 min-h-[100vh] mt-[30vh]">
+        <router-view />
+      </main>
+
+      <div id="pin" class="invisible xl:visible fixed h-full -translate-x-[690px]">
         <!-- Shapes -->
-        <div id="leftRect" class="absolute bg-primary rectangle-shape h-96 -translate-x-3/4 top-[50%] -translate-y-3/4 z-10">
+        <div id="leftRect" class="absolute bg-neutral rectangle-shape overflow-clip h-96 top-[50%] -translate-y-3/4 z-10">
           <div class="absolute bg-circles w-full h-full z-0" />
           <div class="py-6 px-3">
-            <ul class="text-primary-content font-semibold">
+            <ul class="text-neutral-content font-semibold">
               <li class="list-item"><span class="material-icons">email</span>zealbus@outlook.com</li>
               <li class="list-item"><span class="material-icons">contact_page</span><a class="underline z-10" href="https://www.linkedin.com/in/dylan-noorland-56169019b/">LinkedIn Profiel</a></li>
               <li class="list-item form-control flex-row items-center">
@@ -82,163 +36,38 @@ onMounted(() => {
               </li>
             </ul>
           </div>
+          <img src="@/assets/img/headshot.png" class="absolute right-0 bottom-0 object-cover h-[70%] brightness-150" />
         </div>
-
-        <!-- Main Content -->
-        <main ref="mainContent" class="flex flex-col h-full justify-center gap-10 text-base-content">
-          <div ref="explanationRef" class="flex flex-col gap-5 px-28">
-            <h1 class="flex flex-col"><span id="dylan">Dylan</span> <span id="noorland">Noorland</span></h1>
-            <p id="selfDescription" class="text-xl mt-5">
-              Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam, en <b>Informatica is mijn passie</b>.
-            </p>
-            <div id="mainContent" class="divider" />
-            <h3 id="mainContent">
-              <span ref="scrollContent" class="flex items-center">
-                <span id="scrollArrowDown" class="material-icons text-5xl">
-                  arrow_downward
-                </span>
-                Scroll naar beneden
-              </span>
-            </h3>
-          </div>
-          <div id="skillsList" class="px-28">
-            <h2 class="text-center mb-2">Relatieve Ervaring</h2>
-              <div class="flex flex-row justify-evenly gap-3">
-                <div class="skill-item">
-                  <img src="@/assets/img/cs.png" />
-                  <h4>C#</h4>
-                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="5" max="5" />
-                </div>
-                <div class="skill-item">
-                  <img src="@/assets/img/vue.png" />
-                  <h4>Vue</h4>
-                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="5" max="5" />
-                </div>
-                <div class="skill-item">
-                  <img src="@/assets/img/ts.png" />
-                  <h4>Typescript</h4>
-                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="4" max="5" />
-                </div>
-                <div class="skill-item">
-                  <img src="@/assets/img/lua.png" />
-                  <h4>Lua</h4>
-                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="4" max="5" />
-                </div>
-                <div class="skill-item">
-                  <img src="@/assets/img/react.png" />
-                  <h4>React</h4>
-                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="3" max="5" />
-                </div>
-                <div class="skill-item">
-                  <img src="@/assets/img/rust.png" />
-                  <h4>Rust</h4>
-                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="2" max="5" />
-                </div>
-                <div class="skill-item">
-                  <img src="@/assets/img/blazor.png" />
-                  <h4>Blazor</h4>
-                  <progress class="absolute progress progress-secondary top-52 -rotate-90 w-40 h-4" value="4" max="5" />
-                </div>
-              </div>
-            </div>
-          <div id="mainContent" class="flex flex-col justify-center">
-            <div id="jobsList" class="flex flex-row gap-5 px-28">
-              <job-item :startYear="2020" :endYear="0">
-                <template #title>
-                  Oprichter
-                </template>
-                <template #place>
-                  Zeal Software Applications
-                </template>
-                <template #description>
-                  Software-ontwikkelaar, customer-support en internationale samenwerking. Meer dan <b>5,000,000 gebruikers</b> wereldwijd.
-                </template>
-              </job-item>
-              <job-item :startYear="2020" :endYear="0">
-                <template #title>
-                  Bachelor Informatica Voltijd
-                </template>
-                <template #place>
-                  Hogeschool Rotterdam
-                </template>
-                <template #description>
-                  Bij deze opleiding tot software-engineer, leer ik waardevolle lessen over <b>communicatie, software-ontwikkeling, Scrum methodologie, en software design</b>.
-                </template>
-              </job-item>
-              <job-item :startYear="2015" :endYear="2020">
-                <template #title>
-                  Havo Natuur & Techniek
-                </template>
-                <template #place>
-                  De Ring van Putten
-                </template>
-                <template #description>
-                  Ik scoorde een <b>9.9</b> voor het eindproject van het vak Informatica. Hiervoor heb ik een website gebrouwd dat geïnspireerd is door Twitter. Gemaakt in <b>PHP, javascript, en HTML</b>.
-                </template>
-              </job-item>
-            </div>
-          </div>
-          <div id="gradesList" class="flex flex-row gap-5 justify-center px-28">
-            <div id="grade" class="flex flex-col items-center justify-center">
-              <h2>9.9</h2>
-              <h4>Informatica Eindproject</h4>
-            </div>
-            <div id="grade" class="flex flex-col items-center justify-center">
-              <h2>8.3</h2>
-              <h4>Concurrency</h4>
-            </div>
-            <div id="grade" class="flex flex-col items-center justify-center">
-              <h2>10.0</h2>
-              <h4>Object-Oriented Programming</h4>
-            </div>
-            <div id="grade" class="flex flex-col items-center justify-center">
-              <h2>10.0</h2>
-              <h4>Static Typing in C#</h4>
-            </div>
-            <div id="grade" class="flex flex-col items-center justify-center">
-              <h2>10.0</h2>
-              <h4>Higher Order Functions</h4>
-            </div>
-            <div id="grade" class="flex flex-col items-center justify-center">
-              <h2>7.7</h2>
-              <h4>Functions, Combinatronics & Probability</h4>
-            </div>
-          </div>
-        </main>
       </div>
     </div>
   </main>
 </template>
 
-<style>
-.list-item {
-  @apply flex;
-  @apply gap-2;
-}
-.skill-item {
-  @apply flex;
-  @apply flex-col;
-  @apply items-center;
-  @apply p-3;
-  @apply select-none;
-  @apply transition;
-  @apply duration-150;
-  @apply text-base-content;
-  @apply gap-1;
-  @apply flex-shrink;
-}
+<script setup lang="ts">
+import { computed, onMounted, ref } from 'vue';
+import HomeView from './views/HomeView.vue';
+import gsap from 'gsap'
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+import router from './router';
 
-.skill-item img {
-  @apply h-10;
-  @apply object-contain;
-  @apply flex-grow;
-}
+gsap.registerPlugin(ScrollTrigger)
 
-#grade {
-  @apply text-center;
-}
+let themeIsLight = ref(true)
+let theme = computed(() => themeIsLight.value ? 'light' : 'dark')
 
-#grade h4 {
-  @apply flex-grow;
-}
-</style>
+onMounted(() => {
+  let scrollTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#pin",
+      start: "center center",
+      end: "+=500",
+      scrub: .5
+    },
+  })
+
+  scrollTl.to("#leftRect", {
+    translateY: "-160%"
+  })
+})
+
+</script>
