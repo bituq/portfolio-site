@@ -85,7 +85,7 @@ onMounted(() => {
         </div>
 
         <!-- Main Content -->
-        <main ref="mainContent" class="flex flex-col h-full bg-red-500 justify-center gap-10 text-base-content">
+        <main ref="mainContent" class="flex flex-col h-full justify-center gap-10 text-base-content">
           <div ref="explanationRef" class="flex flex-col gap-5 px-28">
             <h1 class="flex flex-col"><span id="dylan">Dylan</span> <span id="noorland">Noorland</span></h1>
             <p id="selfDescription" class="text-xl mt-5">
