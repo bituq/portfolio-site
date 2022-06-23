@@ -32,11 +32,11 @@ onMounted(() => {
   
   let scrollTl = gsap.timeline({
     scrollTrigger: {
-      trigger: "#pin",
-      start: "center center",
-      end: "max",
+      trigger: "#mainContainer",
+      start: () => window.innerHeight / 2 + " center",
+      end: () => "max",
+      markers: true,
       scrub: 1,
-      pin: true,
       snap: {
         snapTo: "labels",
         duration: {min: .2, max: 1},
@@ -47,7 +47,7 @@ onMounted(() => {
 
   scrollTl.addLabel("start")
     .fromTo(scrollContent.value, { opacity: 1 }, { opacity: 0 })
-    .from(mainContent.value, { translateY: "25%", ease: "power3.inOut", duration: 2 } , "-=0.5")
+    .from(explanationRef.value, { translateY: "60%", ease: "power3.inOut", duration: 2 } , "-=0.5")
     .to("#selfDescription", {opacity: 0, duration: 1}, "-=2")
     .to(explanationRef.value.querySelector(".divider"), { translateY: -100, duration: 1}, "=-1")
     .to("#leftRect", { translateY: 20, top: 0, ease: "power3.inOut", duration: 2 }, "-=2")
@@ -66,8 +66,8 @@ onMounted(() => {
 
 <template>
   <main :data-theme="theme" class="flex justify-center w-full h-[300vh] bg-base-300">
-    <div id="mainContainer" class="fixed bg-base-100 max-w-[1080px] h-full">
-      <div id="pin">
+    <div id="mainContainer" class="flex justify-center h-full">
+      <div id="pin" class="fixed bg-base-100 max-w-[1080px] h-full">
         <!-- Shapes -->
         <div id="leftRect" class="absolute bg-primary rectangle-shape h-96 -translate-x-3/4 top-[50%] -translate-y-3/4 z-10">
           <div class="absolute bg-circles w-full h-full z-0" />
@@ -85,7 +85,7 @@ onMounted(() => {
         </div>
 
         <!-- Main Content -->
-        <main ref="mainContent" class="flex flex-col h-[100vh] justify-center gap-10 text-base-content">
+        <main ref="mainContent" class="flex flex-col h-full bg-red-500 justify-center gap-10 text-base-content">
           <div ref="explanationRef" class="flex flex-col gap-5 px-28">
             <h1 class="flex flex-col"><span id="dylan">Dylan</span> <span id="noorland">Noorland</span></h1>
             <p id="selfDescription" class="text-xl mt-5">
