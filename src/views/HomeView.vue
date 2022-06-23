@@ -62,7 +62,7 @@ onMounted(() => {
   <section class="flex flex-col gap-5 over">
     <h1 class="flex flex-col text-base-content"><span id="dylan">Dylan</span> <span id="noorland">Noorland</span></h1>
     <p id="selfDescription" class="text-xl mt-5">
-      Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam, en <b>Informatica is mijn passie</b>.
+      Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam, en <b>Informatica is mijn passie</b>. Collega's omschrijven mij als initiatiefnemend, probleemoplossend, en professioneel.
     </p>
     <h4 id="scrollInfo">
       <span class="flex items-center">
