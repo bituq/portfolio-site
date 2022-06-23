@@ -8,6 +8,7 @@ import grades from "@/assets/grades"
 import projects from "@/assets/projects"
 import jobs from "@/assets/jobs"
 import skills from "@/assets/skills"
+import { createRequire } from "module";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -77,7 +78,7 @@ onMounted(() => {
     <h2 class="mb-10">Ervaring</h2>
     <div id="skills" class="lg:flex lg:flex-row grid grid-cols-4 justify-evenly">
       <div v-for="(skill, i) in skills" :key="i" class="skill-item">
-        <img :src="'../src/assets/img/' + skill.img" />
+        <img :src="`./img/${skill.img}`" />
         <h4>{{skill.name}}</h4>
         <div class="rating flex-col-reverse">
           <input v-for="r in 5" :key="r" type="radio" :name="`rating-${i}`" class="mask mask-star-2 bg-secondary" disabled :checked="skill.rating == r" />
@@ -119,7 +120,7 @@ onMounted(() => {
     <h2 class="mb-10">Projecten</h2>
     <div class="sm:grid md:grid-cols-2 flex flex-col gap-3">
       <div v-for="(project, index) in projects" :key="index" class="card card-compact shadow-lg">
-      <figure v-if="project.img" class="max-h-48 overflow-clip"><img :src="`../src/assets/img/${project.img}`"/></figure>
+      <figure v-if="project.img" class="max-h-48 overflow-clip"><img :src="`./img/${project.img}`"/></figure>
         <div class="card-body">
           <h3 class="card-title">{{project.name}}</h3>
           <p class="text-lg">{{project.shortDescription}}</p>

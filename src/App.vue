@@ -20,8 +20,8 @@
       <main class="flex flex-col gap-5 text-base-content w-[85%] pb-48 min-h-[100vh] mt-[30vh]">
         <router-view />
       </main>
-
-      <div id="pin" class="invisible xl:visible fixed h-full -translate-x-[690px]">
+    </div>
+    <div id="pin" class="invisible xl:visible fixed h-full -translate-x-[690px]">
         <!-- Shapes -->
         <div id="leftRect" class="absolute bg-neutral rectangle-shape overflow-clip h-96 top-[50%] -translate-y-3/4 z-10">
           <div class="absolute bg-circles w-full h-full z-0" />
@@ -39,7 +39,6 @@
           <img src="@/assets/img/headshot.png" class="absolute right-0 bottom-0 object-cover h-[70%] brightness-150" />
         </div>
       </div>
-    </div>
   </main>
 </template>
 
@@ -66,7 +65,7 @@ onMounted(() => {
   })
 
   scrollTl.to("#leftRect", {
-    translateY: "-160%"
+    translateY: "-140%"
   })
 })
 

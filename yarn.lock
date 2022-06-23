@@ -54,10 +54,10 @@
     "@types/parse5" "*"
     "@types/tough-cookie" "*"
 
-"@types/node@*", "@types/node@^16.11.27":
-  "integrity" "sha512-FR5QJe+TaoZ2GsMHkjuwoNabr+UrJNRr2HNOo+r/7vhcuntM6Ee/pRPOnRhhL2XE9OOvX9VLEq+BcXl3VjNoWA=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-16.11.36.tgz"
-  "version" "16.11.36"
+"@types/node@*", "@types/node@^16.11.41":
+  "integrity" "sha512-mqoYK2TnVjdkGk8qXAVGc/x9nSaTpSrFaGFm43BUH3IdoBV0nta6hYaGmdOvIMlbHJbUEVen3gvwpwovAZKNdQ=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-16.11.41.tgz"
+  "version" "16.11.41"
 
 "@types/parse5@*":
   "integrity" "sha512-SuT16Q1K51EAVPz1K29DJ/sXjhSQ0zjvsypYJ6tlwVsRV9jwW5Adq2ch8Dq8kDBCkYnELS7N7VNCSB5nC56t/g=="
