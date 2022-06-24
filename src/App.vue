@@ -65,7 +65,7 @@ onMounted(() => {
   })
 
   scrollTl.to("#leftRect", {
-    translateY: "-140%"
+    translateY: () => "-=" + window.innerHeight / 6
   })
 })
 
