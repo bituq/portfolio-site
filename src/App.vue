@@ -53,10 +53,11 @@ import router from './router';
 
 gsap.registerPlugin(ScrollTrigger)
 
-let themeIsLight = ref(window.matchMedia('(prefers-color-scheme: light)').matches)
+const lightThemeMedia = window.matchMedia('(prefers-color-scheme: light)')
+let themeIsLight = ref(lightThemeMedia.matches)
 let theme = computed(() => themeIsLight.value ? 'light' : 'dark')
 
-window.matchMedia('(prefers-color-scheme: light)').onchange = (media) => themeIsLight.value = media.matches
+lightThemeMedia.onchange = (media) => themeIsLight.value = media.matches
 
 
 onMounted(() => {

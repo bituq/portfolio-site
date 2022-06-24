@@ -76,11 +76,11 @@ onMounted(() => {
   <div id="section" class="divider" />
   <section id="section">
     <h2 class="mb-10">Ervaring</h2>
-    <div id="skills" class="lg:flex lg:flex-row grid grid-cols-4 justify-evenly">
+    <div id="skills" class="sm:flex sm:flex-row grid grid-cols-2 justify-evenly">
       <div v-for="(skill, i) in skills" :key="i" class="skill-item">
         <img :src="`./img/${skill.img}`" />
         <h4>{{skill.name}}</h4>
-        <div class="rating flex-col-reverse">
+        <div class="rating sm:flex-col-reverse flex-row">
           <input v-for="r in 5" :key="r" type="radio" :name="`rating-${i}`" class="mask mask-star-2 bg-secondary" disabled :checked="skill.rating == r" />
         </div>
       </div>
