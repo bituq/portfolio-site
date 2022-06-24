@@ -2,9 +2,11 @@
   <header class="visible xl:invisible bg-neutral bg-opacity-50 backdrop-blur-sm z-20 h-20 fixed w-full">
     <div class="p-4 flex flex-row gap-5 items-center justify-between">
       <div class="list-item form-control text-white flex-row items-center">
-        <label class="label cursor-pointer">Donker</label>
-        <input type="checkbox" class="toggle toggle-lg toggle-secondary z-10" v-model="themeIsLight" checked />
-        <label class="label cursor-pointer">Licht</label>
+        <label class="hidden sm:block label cursor-pointer">Donker</label>
+        <label class="block sm:hidden label cursor-pointer material-icons">dark_mode</label>
+        <input type="checkbox" class="toggle sm:toggle-lg toggle-sm toggle-secondary z-10" v-model="themeIsLight" checked />
+        <label class="block sm:hidden label cursor-pointer material-icons">light_mode</label>
+        <label class="hidden sm:block label cursor-pointer">Licht</label>
       </div>
       <!-- Personal Information -->
       <div>
@@ -43,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, watch } from 'vue';
 import HomeView from './views/HomeView.vue';
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -53,6 +55,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 let themeIsLight = ref(window.matchMedia('(prefers-color-scheme: light)').matches)
 let theme = computed(() => themeIsLight.value ? 'light' : 'dark')
+
+window.matchMedia('(prefers-color-scheme: light)').onchange = (media) => themeIsLight.value = media.matches
+
 
 onMounted(() => {
   let scrollTl = gsap.timeline({
