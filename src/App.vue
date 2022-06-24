@@ -1,5 +1,5 @@
 <template>
-  <header class="visible xl:invisible bg-neutral bg-opacity-50 backdrop-blur-sm z-20 h-20 fixed w-full">
+  <header class="visible 2xl:invisible bg-neutral bg-opacity-50 backdrop-blur-sm z-20 h-20 fixed w-full">
     <div class="p-4 flex flex-row gap-5 items-center justify-between">
       <div class="list-item form-control text-white flex-row items-center">
         <label class="hidden sm:block label cursor-pointer">Donker</label>
@@ -23,7 +23,7 @@
         <router-view />
       </main>
     </div>
-    <div id="pin" class="invisible xl:visible fixed h-full -translate-x-[690px]">
+    <div id="pin" class="invisible 2xl:visible fixed h-full -translate-x-[690px]">
         <!-- Shapes -->
         <div id="leftRect" class="absolute bg-neutral rectangle-shape overflow-clip h-96 top-[50%] -translate-y-3/4 z-10">
           <div class="absolute bg-circles w-full h-full z-0" />

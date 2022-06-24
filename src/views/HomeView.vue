@@ -76,18 +76,18 @@ onMounted(() => {
   <div id="section" class="divider" />
   <section id="section">
     <h2 class="mb-10">Ervaring</h2>
-    <div id="skills" class="sm:flex sm:flex-row grid grid-cols-2 justify-evenly">
+    <div id="skills" class="md:flex md:flex-row grid grid-cols-2 sm:grid-cols-4 justify-evenly">
       <div v-for="(skill, i) in skills" :key="i" class="skill-item">
         <img :src="`./img/${skill.img}`" />
         <h4>{{skill.name}}</h4>
-        <div class="rating sm:flex-col-reverse flex-row">
+        <div class="rating md:flex-col-reverse flex-row">
           <input v-for="r in 5" :key="r" type="radio" :name="`rating-${i}`" class="mask mask-star-2 bg-secondary" disabled :checked="skill.rating == r" />
         </div>
       </div>
     </div>
   </section>
   <div id="section" class="divider" />
-  <section id="section" class="flex lg:flex-row flex-col gap-5">
+  <section id="section" class="flex md:flex-row flex-col gap-5">
     <job-item v-for="(job, index) in jobs" :key="index" :startYear="job.from" :endYear="job.until" >
       <template #title>
         {{job.position}}
