@@ -12,7 +12,7 @@
   	{
 		"grade": 10.0,
 		"for": "Object-Oriented-Programming",
-		"description": "Ik kan bekende object-geörienteerde concepten beschrijven en toepassen in systeem analyse, design, en implementatie. Bovendien kan ik requirement formuleren, en een systeem ontwerpen doormiddel van UML, Use Case en Class diagrammen."
+		"description": "Ik kan bekende object-geörienteerde concepten beschrijven en toepassen in systeem analyse, design, en implementatie. Bovendien kan ik requirements formuleren, en een systeem ontwerpen doormiddel van UML, Use Case en Class diagrammen."
 	},
   	{"grade": 10.0, "for": "Static Typing in C#"},
   	{"grade": 10.0, "for": "Higher Order Functions"},
