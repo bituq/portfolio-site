@@ -125,7 +125,7 @@ onMounted(() => {
           <h3 class="card-title">{{project.name}}</h3>
           <p class="text-lg">{{project.shortDescription}}</p>
           <div class="card-actions justify-center">
-            <a v-if="project.url" class="btn btn-primary btn-sm btn-outline" :href="project.url">Meer Lezen</a>
+            <a v-if="project.url" class="btn btn-primary btn-sm btn-outline" :href="project.url" target="_blank">Meer Lezen</a>
           </div>
         </div>
       </div>
