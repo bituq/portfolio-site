@@ -6,7 +6,7 @@ on:
       - development
 
 jobs:
-  deploy_live_website:
+  deploy_testing_website:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
