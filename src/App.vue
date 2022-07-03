@@ -1,5 +1,6 @@
 <template>
-  <header class="visible 2xl:invisible bg-neutral bg-opacity-50 backdrop-blur-sm z-20 h-20 fixed w-full">
+  <!-- Header -->
+  <header class="visible 2xl:invisible bg-neutral bg-opacity-50 backdrop-blur-sm h-20 fixed w-full">
     <div class="p-4 flex flex-row gap-5 items-center justify-between">
       <div class="list-item form-control text-white flex-row items-center">
         <label class="hidden sm:block label cursor-pointer">Donker</label>
@@ -8,7 +9,7 @@
         <label class="block sm:hidden label cursor-pointer material-icons">light_mode</label>
         <label class="hidden sm:block label cursor-pointer">Licht</label>
       </div>
-      <!-- Personal Information -->
+      <!-- Contact Information -->
       <div>
         <div class="list-item text-white"><span class="material-icons">email</span>zealbus@outlook.com</div>
         <div class="list-item text-white">
