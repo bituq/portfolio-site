@@ -44,7 +44,7 @@ onMounted(() => {
     }, {
       scrollTrigger: {
         trigger: section,
-        start: () => "center-=300 center",
+        start: () => "center-=400 center",
         toggleActions: "play reverse play reverse"
       },
       opacity: 1,
