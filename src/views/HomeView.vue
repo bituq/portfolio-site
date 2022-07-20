@@ -13,13 +13,6 @@ import { createRequire } from "module";
 gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
-  // let tl = gsap.timeline()
-  // tl.from("#mainContainer", { width: "100%", duration: 2, ease: "power2.out"})
-  //   .fromTo("#leftRect", { opacity: 0, left: "-400", }, { left: 0, opacity: 1, duration: 2, ease: "power3.out" }, "-=1")
-  //   .from("h1", {marginLeft: "-100%", duration: 2, ease: "power4.out", delay: .2 }, "-=1.5")
-  //   .from("#mainContent", { opacity: 0, duration: 1}, "-=1")
-  //   .from("#jobsList", { translateX: "100%", duration: 2 }, "-=2")
-
   let tl = gsap.timeline()
 
   tl.from("#dylan", { marginLeft: -200, opacity: 0, duration: 2, ease: "power2.out"})
@@ -44,7 +37,7 @@ onMounted(() => {
     }, {
       scrollTrigger: {
         trigger: section,
-        start: "center-=400 center",
+        start: () => "center-=400 center",
         toggleActions: "play reverse play reverse"
       },
       opacity: 1,
@@ -75,7 +68,6 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
-    <h2 class="mb-10">Ervaring</h2>
     <div id="skills" class="md:flex md:flex-row grid grid-cols-2 sm:grid-cols-4 justify-evenly">
       <div v-for="(skill, i) in skills" :key="i" class="skill-item">
         <img :src="`./img/${skill.img}`" />
@@ -102,7 +94,7 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
-    <h2 class="mb-10">Cijfers</h2>
+    <h1 class="mb-5 text-8xl">Schoolcijfers</h1>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
       <div v-for="(grade, index) in grades" :key="grade.for" id="grade" class="card card-compact shadow-lg">
         <div class="card-body">
@@ -117,7 +109,7 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
-    <h2 class="mb-10">Projecten</h2>
+    <h1 class="mb-5 text-8xl">Eigen Projecten</h1>
     <div class="sm:grid md:grid-cols-2 flex flex-col gap-3">
       <div v-for="(project, index) in projects" :key="index" class="card card-compact shadow-lg">
       <figure v-if="project.img" class="max-h-48 overflow-clip"><img :src="`./img/${project.img}`"/></figure>
