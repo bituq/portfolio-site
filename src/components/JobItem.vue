@@ -1,5 +1,5 @@
 <template>
-	<div class="card card-compact shadow-xl">
+	<div class="card card-compact shadow-xl bg-base-100">
 		<div class="card-body">
 			<h3 class="flex-grow card-title">
 				<slot name="title"/>

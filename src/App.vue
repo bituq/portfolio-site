@@ -1,7 +1,7 @@
 <template>
-  <header class="visible 2xl:invisible bg-neutral bg-opacity-50 backdrop-blur-sm z-20 h-20 fixed w-full">
+  <header :data-theme="theme" class="visible 2xl:invisible bg-base-100 z-20 h-20 fixed w-full">
     <div class="p-4 flex flex-row gap-5 items-center justify-between">
-      <div class="list-item form-control text-white flex-row items-center">
+      <div class="list-item form-control text-base-content flex-row items-center">
         <label class="hidden sm:block label cursor-pointer">Donker</label>
         <label class="block sm:hidden label cursor-pointer material-icons">dark_mode</label>
         <input type="checkbox" class="toggle sm:toggle-lg toggle-sm toggle-secondary z-10" v-model="themeIsLight" checked />
@@ -9,26 +9,26 @@
         <label class="hidden sm:block label cursor-pointer">Licht</label>
       </div>
       <!-- Personal Information -->
-      <div>
-        <div class="list-item text-white"><span class="material-icons">email</span>zealbus@outlook.com</div>
-        <div class="list-item text-white">
+      <div class="text-base-content">
+        <div class="list-item"><span class="material-icons">email</span>zealbus@outlook.com</div>
+        <div class="list-item">
           <span class="material-icons">contact_page</span><a class="underline z-10" href="https://www.linkedin.com/in/dylan-noorland-56169019b/">LinkedIn Profiel</a>
         </div>
       </div>
     </div>
   </header>
   <main :data-theme="theme" class="flex justify-center w-full bg-base-300">
-    <div class="flex justify-center w-[1024px] h-full bg-base-100 overflow-clip">
+    <div class="flex justify-center w-[1280px] h-full bg-base-100 overflow-clip">
       <main class="flex flex-col gap-5 text-base-content w-[85%] pb-48 min-h-[100vh] mt-[30vh]">
         <router-view />
       </main>
     </div>
-    <div id="pin" class="invisible 2xl:visible fixed h-full -translate-x-[690px]">
+    <div id="pin" class="invisible 2xl:visible fixed h-full -translate-x-[830px]">
         <!-- Shapes -->
-        <div id="leftRect" class="absolute bg-neutral rectangle-shape overflow-clip h-96 top-[50%] -translate-y-3/4 z-10">
-          <div class="absolute bg-circles w-full h-full z-0" />
+        <div id="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-96 top-[50%] -translate-y-3/4 z-10">
+          <div class="absolute w-full h-full z-0" />
           <div class="py-6 px-3">
-            <ul class="text-neutral-content font-semibold">
+            <ul class="text-base-100-content font-semibold">
               <li class="list-item"><span class="material-icons">email</span>zealbus@outlook.com</li>
               <li class="list-item"><span class="material-icons">contact_page</span><a class="underline z-10" href="https://www.linkedin.com/in/dylan-noorland-56169019b/">LinkedIn Profiel</a></li>
               <li class="list-item form-control flex-row items-center">
@@ -58,7 +58,6 @@ let themeIsLight = ref(lightThemeMedia.matches)
 let theme = computed(() => themeIsLight.value ? 'light' : 'dark')
 
 lightThemeMedia.onchange = (media) => themeIsLight.value = media.matches
-
 
 onMounted(() => {
   let scrollTl = gsap.timeline({

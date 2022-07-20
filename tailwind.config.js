@@ -1,7 +1,7 @@
 defaultTheme = {
-  primary: "#2A71FF",
-  secondary: "#FFC55A",
-  accent: "#DA5EE0"
+  primary: "#C84B31",
+  secondary: "#ECDBBA",
+  accent: "#2D4263"
 }
 
 module.exports = {
@@ -24,12 +24,14 @@ module.exports = {
     themes: [
       {
         light: {
-          ...require("daisyui/src/colors/themes")["[data-theme=light]"],
-          ...defaultTheme
+          primary: "#112B3C",
+          secondary: "#F66B0E",
+          accent: "#205375",
+          'base-100': "#EFEFEF"
         },
         dark: {
-          ...require("daisyui/src/colors/themes")["[data-theme=dark]"],
-          ...defaultTheme
+          ...defaultTheme,
+          'base-100': '#191919',
         }
       }
     ]
