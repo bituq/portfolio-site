@@ -44,7 +44,7 @@ onMounted(() => {
     }, {
       scrollTrigger: {
         trigger: section,
-        start: "center-=400 center",
+        start: () => "center-=300 center",
         toggleActions: "play reverse play reverse"
       },
       opacity: 1,
@@ -75,7 +75,6 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
-    <h2 class="mb-10">Ervaring</h2>
     <div id="skills" class="md:flex md:flex-row grid grid-cols-2 sm:grid-cols-4 justify-evenly">
       <div v-for="(skill, i) in skills" :key="i" class="skill-item">
         <img :src="`./img/${skill.img}`" />
@@ -102,7 +101,6 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
-    <h2 class="mb-10">Cijfers</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
       <div v-for="(grade, index) in grades" :key="grade.for" id="grade" class="card card-compact shadow-lg">
         <div class="card-body">
@@ -117,7 +115,6 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
-    <h2 class="mb-10">Projecten</h2>
     <div class="sm:grid md:grid-cols-2 flex flex-col gap-3">
       <div v-for="(project, index) in projects" :key="index" class="card card-compact shadow-lg">
       <figure v-if="project.img" class="max-h-48 overflow-clip"><img :src="`./img/${project.img}`"/></figure>

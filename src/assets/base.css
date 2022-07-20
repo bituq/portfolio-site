@@ -34,13 +34,13 @@ h1 {
 
 .rectangle-shape {
 	@apply rounded;
-	@apply shadow-md;
+	@apply shadow-lg;
 	@apply duration-300;
 	@apply transition;
 	@apply ease-out;
 	@apply hover:shadow-lg;
 	@apply bg-opacity-80;
-	@apply backdrop-blur-sm;
+	@apply backdrop-blur-md;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -57,7 +57,7 @@ h1 {
 h2 {
 	@apply text-6xl;
 	@apply sm:text-8xl;
-	@apply text-base-300
+	@apply text-base-content;
 }
 
 h3 {
