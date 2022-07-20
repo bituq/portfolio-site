@@ -1,5 +1,5 @@
 <template>
-  <header :data-theme="theme" class="visible 2xl:invisible bg-base-100 z-20 h-20 fixed w-full">
+  <header :data-theme="theme" class="visible 2xl:invisible bg-base-100 z-20 h-24 fixed w-full">
     <div class="p-4 flex flex-row gap-5 items-center justify-between">
       <div class="list-item form-control text-base-content flex-row items-center">
         <label class="hidden sm:block label cursor-pointer">Donker</label>
@@ -14,6 +14,9 @@
         <div class="list-item">
           <span class="material-icons">contact_page</span><a class="underline z-10" href="https://www.linkedin.com/in/dylan-noorland-56169019b/">LinkedIn Profiel</a>
         </div>
+        <div class="list-item">
+          <span class="material-icons">code</span><a class="underline z-10" href="https://github.com/bituq">GitHub Profiel</a>
+        </div>
       </div>
     </div>
   </header>
@@ -25,12 +28,13 @@
     </div>
     <div id="pin" class="invisible 2xl:visible fixed h-full -translate-x-[830px]">
         <!-- Shapes -->
-        <div id="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-96 top-[50%] -translate-y-3/4 z-10">
+        <div id="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-[28rem] top-[50%] -translate-y-3/4 z-10">
           <div class="absolute w-full h-full z-0" />
           <div class="py-6 px-3">
             <ul class="text-base-100-content font-semibold">
               <li class="list-item"><span class="material-icons">email</span>zealbus@outlook.com</li>
               <li class="list-item"><span class="material-icons">contact_page</span><a class="underline z-10" href="https://www.linkedin.com/in/dylan-noorland-56169019b/">LinkedIn Profiel</a></li>
+              <li class="list-item"><span class="material-icons">code</span><a class="underline z-10" href="https://github.com/bituq">GitHub Profiel</a></li>
               <li class="list-item form-control flex-row items-center">
                 <label class="label cursor-pointer">Donker</label>
                 <input type="checkbox" class="toggle toggle-secondary z-10" v-model="themeIsLight" checked />
