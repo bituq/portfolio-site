@@ -8,7 +8,7 @@
         <label class="block sm:hidden label cursor-pointer material-icons">light_mode</label>
         <label class="hidden sm:block label cursor-pointer">Licht</label>
       </div>
-      <!-- Personal Information -->
+      <!-- Contact Information -->
       <div class="text-base-content">
         <div class="list-item"><span class="material-icons">email</span>zealbus@outlook.com</div>
         <div class="list-item">
@@ -21,8 +21,8 @@
     </div>
   </header>
   <main :data-theme="theme" class="flex justify-center w-full bg-base-300">
-    <div class="flex justify-center w-[1280px] h-full bg-base-100 overflow-clip">
-      <main class="flex flex-col gap-5 text-base-content w-[85%] pb-48 min-h-[100vh] mt-[30vh]">
+    <div class="flex justify-center max-w-7xl h-full bg-base-100 overflow-clip">
+      <main class="flex flex-col gap-5 text-base-content px-24 pb-48 min-h-[100vh] mt-[30vh]">
         <router-view />
       </main>
     </div>
@@ -49,11 +49,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
-import HomeView from './views/HomeView.vue';
+import { computed, onMounted, ref } from 'vue';
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import router from './router';
 
 gsap.registerPlugin(ScrollTrigger)
 
