@@ -55,7 +55,7 @@ onMounted(() => {
   <section class="flex flex-col gap-5 over">
     <h1 class="flex flex-col text-base-content"><span id="dylan">Dylan</span> <span id="noorland">Noorland</span></h1>
     <p id="selfDescription" class="text-xl mt-5">
-      Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam, en <b>Informatica is mijn passie</b>. Collega's omschrijven mij als initiatiefnemend, probleemoplossend, en professioneel.
+      Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam, en <b>Informatica is mijn passie</b>. Medestudenten omschrijven mij als initiatiefnemend, probleemoplossend, en professioneel.
     </p>
     <h4 id="scrollInfo">
       <span class="flex items-center">
@@ -94,7 +94,7 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
-    <h1 class="mb-5 text-8xl">Schoolcijfers</h1>
+    <h2 class="mb-5 text-base-300">Schoolcijfers</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
       <div v-for="(grade, index) in grades" :key="grade.for" id="grade" class="card card-compact shadow-lg">
         <div class="card-body">
@@ -109,7 +109,7 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
-    <h1 class="mb-5 text-8xl">Eigen Projecten</h1>
+    <h2 class="mb-5 text-base-300">Eigen Projecten</h2>
     <div class="sm:grid md:grid-cols-2 flex flex-col gap-3">
       <div v-for="(project, index) in projects" :key="index" class="card card-compact shadow-lg">
       <figure v-if="project.img" class="max-h-48 overflow-clip"><img :src="`./img/${project.img}`"/></figure>
