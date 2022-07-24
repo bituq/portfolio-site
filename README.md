@@ -1,4 +1,4 @@
-# portfolio-site
+# portfolio-site [![Deploy to Live Channel](https://github.com/bituq/portfolio-site/actions/workflows/firebase-hosting.yml/badge.svg?branch=master)](https://github.com/bituq/portfolio-site/actions/workflows/firebase-hosting.yml)
 
 
 
