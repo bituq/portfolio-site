@@ -1,5 +1,5 @@
 <template>
-  <header :data-theme="theme" class="visible 2xl:invisible bg-base-100 z-20 h-20 fixed w-full">
+  <header :data-theme="theme" class="visible 2xl:invisible bg-base-100 z-20 h-24 fixed w-full">
     <div class="p-4 flex flex-row gap-5 items-center justify-between">
       <div class="list-item form-control text-base-content flex-row items-center">
         <label class="hidden sm:block label cursor-pointer">Donker</label>
@@ -8,29 +8,33 @@
         <label class="block sm:hidden label cursor-pointer material-icons">light_mode</label>
         <label class="hidden sm:block label cursor-pointer">Licht</label>
       </div>
-      <!-- Personal Information -->
+      <!-- Contact Information -->
       <div class="text-base-content">
         <div class="list-item"><span class="material-icons">email</span>zealbus@outlook.com</div>
         <div class="list-item">
           <span class="material-icons">contact_page</span><a class="underline z-10" href="https://www.linkedin.com/in/dylan-noorland-56169019b/">LinkedIn Profiel</a>
         </div>
+        <div class="list-item">
+          <span class="material-icons">code</span><a class="underline z-10" href="https://github.com/bituq">GitHub Profiel</a>
+        </div>
       </div>
     </div>
   </header>
   <main :data-theme="theme" class="flex justify-center w-full bg-base-300">
-    <div class="flex justify-center w-[1280px] h-full bg-base-100 overflow-clip">
-      <main class="flex flex-col gap-5 text-base-content w-[85%] pb-48 min-h-[100vh] mt-[30vh]">
+    <div class="flex justify-center max-w-7xl h-full bg-base-100 overflow-clip">
+      <main class="flex flex-col gap-5 text-base-content px-24 pb-48 min-h-[100vh] mt-[30vh]">
         <router-view />
       </main>
     </div>
     <div id="pin" class="invisible 2xl:visible fixed h-full -translate-x-[830px]">
         <!-- Shapes -->
-        <div id="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-96 top-[50%] -translate-y-3/4 z-10">
+        <div id="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-[28rem] top-[50%] -translate-y-3/4 z-10">
           <div class="absolute w-full h-full z-0" />
           <div class="py-6 px-3">
             <ul class="text-base-100-content font-semibold">
               <li class="list-item"><span class="material-icons">email</span>zealbus@outlook.com</li>
               <li class="list-item"><span class="material-icons">contact_page</span><a class="underline z-10" href="https://www.linkedin.com/in/dylan-noorland-56169019b/">LinkedIn Profiel</a></li>
+              <li class="list-item"><span class="material-icons">code</span><a class="underline z-10" href="https://github.com/bituq">GitHub Profiel</a></li>
               <li class="list-item form-control flex-row items-center">
                 <label class="label cursor-pointer">Donker</label>
                 <input type="checkbox" class="toggle toggle-secondary z-10" v-model="themeIsLight" checked />
@@ -45,11 +49,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue';
-import HomeView from './views/HomeView.vue';
+import { computed, onMounted, ref } from 'vue';
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import router from './router';
 
 gsap.registerPlugin(ScrollTrigger)
 

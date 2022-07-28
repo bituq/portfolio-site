@@ -2,6 +2,12 @@ name: Deploy to Live Channel
 
 on:
   push:
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - '*.json'
+      - '*.html'
+      - '*.ts'
     branches:
       - master
 

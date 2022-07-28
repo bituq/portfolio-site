@@ -2,8 +2,14 @@ name: Deploy to Preview Channel
 
 on:
   push:
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - '*.json'
+      - '*.html'
+      - '*.ts'
     branches:
-      - development
+      - testing
 
 jobs:
   deploy_testing_website:

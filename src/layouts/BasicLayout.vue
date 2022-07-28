@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollToPlugin)
 onMounted(() => {
 	gsap.to(window, { scrollTo: 0})
 
-	gsap.utils.toArray("section").forEach((section, index) => gsap.from(section, {
+	gsap.utils.toArray("section").forEach((section: any, index) => gsap.from(section, {
 		translateX: -400,
 		opacity: 0,
 		ease: "power3.out",

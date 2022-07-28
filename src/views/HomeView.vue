@@ -13,13 +13,6 @@ import { createRequire } from "module";
 gsap.registerPlugin(ScrollTrigger)
 
 onMounted(() => {
-  // let tl = gsap.timeline()
-  // tl.from("#mainContainer", { width: "100%", duration: 2, ease: "power2.out"})
-  //   .fromTo("#leftRect", { opacity: 0, left: "-400", }, { left: 0, opacity: 1, duration: 2, ease: "power3.out" }, "-=1")
-  //   .from("h1", {marginLeft: "-100%", duration: 2, ease: "power4.out", delay: .2 }, "-=1.5")
-  //   .from("#mainContent", { opacity: 0, duration: 1}, "-=1")
-  //   .from("#jobsList", { translateX: "100%", duration: 2 }, "-=2")
-
   let tl = gsap.timeline()
 
   tl.from("#dylan", { marginLeft: -200, opacity: 0, duration: 2, ease: "power2.out"})
@@ -44,7 +37,7 @@ onMounted(() => {
     }, {
       scrollTrigger: {
         trigger: section,
-        start: () => "center-=300 center",
+        start: () => "center-=400 center",
         toggleActions: "play reverse play reverse"
       },
       opacity: 1,
@@ -62,7 +55,7 @@ onMounted(() => {
   <section class="flex flex-col gap-5 over">
     <h1 class="flex flex-col text-base-content"><span id="dylan">Dylan</span> <span id="noorland">Noorland</span></h1>
     <p id="selfDescription" class="text-xl mt-5">
-      Ik ben een tweedejaars student aan de opleiding Informatica op de Hogeschool Rotterdam, en <b>Informatica is mijn passie</b>. Collega's omschrijven mij als initiatiefnemend, probleemoplossend, en professioneel.
+      Ik ben een derdejaars student aan de opleiding Informatica op de Hogeschool Rotterdam, en <b>Informatica is mijn passie</b>. Medestudenten omschrijven mij als initiatiefnemend, probleemoplossend, en professioneel.
     </p>
     <h4 id="scrollInfo">
       <span class="flex items-center">
@@ -101,6 +94,7 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
+    <h2 class="mb-5 text-base-300">Schoolcijfers</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
       <div v-for="(grade, index) in grades" :key="grade.for" id="grade" class="card card-compact shadow-lg">
         <div class="card-body">
@@ -115,6 +109,7 @@ onMounted(() => {
   </section>
   <div id="section" class="divider" />
   <section id="section">
+    <h2 class="mb-5 text-base-300">Eigen Projecten</h2>
     <div class="sm:grid md:grid-cols-2 flex flex-col gap-3">
       <div v-for="(project, index) in projects" :key="index" class="card card-compact shadow-lg">
       <figure v-if="project.img" class="max-h-48 overflow-clip"><img :src="`./img/${project.img}`"/></figure>
