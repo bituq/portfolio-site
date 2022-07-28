@@ -11,7 +11,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['"Arial Nova"', 'sans-serif']
+      'sans': ['"Proxima Nova"', 'sans-serif'],
+      'code': ['"Fira Code"', 'monospace'],
+      'argentum': ['"Argentum Sans"', 'sans-serif']
     },
     extend: {
       backgroundImage: {

@@ -3,29 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-	font-family: 'FiraCode', monospace;
+	font-family: 'Fira Code', monospace;
 	src: url(fonts/FiraCode.ttf);
 }
 
 @font-face {
-	font-family: 'ProximaNova';
+	font-family: 'Proxima Nova';
 	src: url(fonts/ProximaNova.otf);
 }
 
-.font-proxima {
-	font-family: 'ProximaNova';
-}
-
-.font-koulen {
-	font-family: 'Koulen', cursive;
-}
-
-.font-fira {
-	font-family: 'FiraCode', monospace;
-}
-
-h1 {
-	@apply text-9xl;
+@font-face {
+	font-family: 'Argentum Sans';
+	src: url(fonts/ArgentumSans-Bold.ttf);
 }
 
 .bg-circles {
@@ -51,7 +40,8 @@ h1 {
 	@apply text-7xl;
 	@apply sm:text-9xl;
 	@apply font-extrabold;
-	@apply text-base-300
+	@apply text-base-300;
+	@apply font-argentum;
 }
 
 h2 {
