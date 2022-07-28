@@ -117,7 +117,8 @@ onMounted(() => {
           <h3 class="card-title">{{project.name}}</h3>
           <p class="text-lg">{{project.shortDescription}}</p>
           <div class="card-actions justify-center">
-            <a v-if="project.url" class="btn btn-primary btn-sm btn-outline" :href="project.url" target="_blank">Meer Lezen</a>
+            <a v-if="project.url" class="btn btn-primary btn-sm btn-outline" :href="project.url" target="_blank">Bekijk Github</a>
+            <a v-if="project.route" class="btn btn-primary btn-sm btn-outline" @click="$router.push(`/project/${project.route}`)" target="_blank">Meer Lezen</a>
           </div>
         </div>
       </div>

@@ -1,9 +1,9 @@
 [
 	{
 		"name": "Roshade",
-		"img": "roshade.png",
-		"shortDescription": "Een installatiepakket gemaakt in NSIS voor het installeren van Reshade.",
-		"url": "https://github.com/bituq/Roshade"
+		"img": "roshade_banner.jpg",
+		"shortDescription": "Een installatiepakket gemaakt in Tauri en Rust met Vue 3.0 voor het installeren van Reshade. Dit is het hoofdproject voor mijn bedrijf.",
+		"route": "roshade"
 	},
 	{
 		"name": "Rim-light Shader",
