@@ -33,7 +33,9 @@ onMounted(() => {
 				<slot name="description" />
 			</p>
 		</section>
+		<section class="mt-5">
 		<slot name="content" />
+		</section>
 		<section class="divider" />
 		<section>
 			<button class="btn btn-primary btn-outline" @click="$router.back()">Ga terug</button>
