@@ -28,7 +28,7 @@
     </div>
     <div id="pin" class="invisible 2xl:visible fixed h-full -translate-x-[830px]">
         <!-- Shapes -->
-        <div id="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-[28rem] top-[50%] -translate-y-3/4 z-10">
+        <div id="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-[28rem] top-[50%] z-10">
           <div class="absolute w-full h-full z-0" />
           <div class="py-6 px-3">
             <ul class="text-base-100-content font-semibold">
@@ -71,7 +71,9 @@ onMounted(() => {
     },
   })
 
-  scrollTl.to("#leftRect", {
+  scrollTl.fromTo("#leftRect", {
+    translateY: () => "-=" + window.innerHeight * .05
+  }, {
     translateY: () => "-=" + window.innerHeight / 6
   })
 })
