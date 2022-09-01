@@ -38,7 +38,7 @@ onMounted(() => {
 		</section>
 		<section class="divider" />
 		<section>
-			<button class="btn btn-primary btn-outline" @click="$router.back()">Ga terug</button>
+			<button class="btn btn-primary btn-outline" @click="$router.push('/')">Ga terug</button>
 		</section>
 	</main>
 </template>
