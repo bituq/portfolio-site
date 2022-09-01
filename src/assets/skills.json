@@ -1,10 +1,10 @@
 [
-	{"img": "cs.png", "name": "C#", "rating": 5},
-	{"img": "vue.png", "name": "Vue", "rating": 5},
-	{"img": "ts.png", "name": "Typescript", "rating": 5},
-	{"img": "lua.png", "name": "Lua", "rating": 4},
-	{"img": "react.png", "name": "React", "rating": 3},
-	{"img": "rust.png", "name": "Rust", "rating": 3},
-	{"img": "blazor.png", "name": "Blazor", "rating": 2},
-	{"img": "python.png", "name": "Python", "rating": 4}
+	{"img": "cs.webp", "name": "C#", "rating": 5},
+	{"img": "vue.webp", "name": "Vue", "rating": 5},
+	{"img": "ts.webp", "name": "Typescript", "rating": 5},
+	{"img": "lua.webp", "name": "Lua", "rating": 4},
+	{"img": "react.webp", "name": "React", "rating": 3},
+	{"img": "rust.webp", "name": "Rust", "rating": 3},
+	{"img": "blazor.webp", "name": "Blazor", "rating": 2},
+	{"img": "python.webp", "name": "Python", "rating": 4}
 ]

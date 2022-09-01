@@ -8,9 +8,11 @@ import BasicLayout from '@/layouts/BasicLayout.vue';
 		<template #description>
 			Shaders voor Roblox. Geschreven met <a target="_blank" href="https://tauri.app/">Tauri</a>, Rust, en Vue. Meer dan 5,000,000 gebruikers wereldwijd.
 		</template>
+		<template #buttons>
+			<a class="btn btn-primary w-40" href="https://roshade.com/" target="_blank">Bezoek Roshade.com</a>
+		</template>
 		<template #content>
 			<div class="flex-col flex gap-16">
-				<a class="btn btn-primary w-40" href="https://roshade.com/" target="_blank">Website Bekijken</a>
 				<div class="gap-4 flex-col flex">
 					<h3>Het probleem</h3>
 					<p class="text-xl">

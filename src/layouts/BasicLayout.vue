@@ -28,17 +28,25 @@ onMounted(() => {
 				<slot name="subtitle" />
 			</h3>
 		</section>
-		<section class="mt-5">
-			<p class="text-xl">
-				<slot name="description" />
-			</p>
-		</section>
-		<section class="mt-5">
-		<slot name="content" />
-		</section>
+
+		<div class="flex flex-col mt-5 gap-5">
+			<section>
+				<p class="text-xl">
+					<slot name="description" />
+				</p>
+			</section>
+			<section class="flex flex-row gap-2.5">
+				<RouterLink v-if="$slots.content" class="btn btn-primary btn-outline" to="/">Ga terug</RouterLink>
+				<slot name="buttons" />
+			</section>
+			<section>
+				<slot name="content" />
+			</section>
+		</div>
+
 		<section class="divider" />
 		<section>
-			<button class="btn btn-primary btn-outline" @click="$router.push('/')">Ga terug</button>
+			<RouterLink class="btn btn-primary btn-outline" to="/">Ga terug</RouterLink>
 		</section>
 	</main>
 </template>
