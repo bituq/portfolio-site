@@ -44,10 +44,11 @@ onMounted(() => {
 			</section>
 		</div>
 
-		<section class="divider" />
-
-		<section>
-			<RouterLink class="btn btn-primary btn-outline" to="/">Ga terug</RouterLink>
-		</section>
+		<template v-if="$slots.content">
+			<section class="divider" />
+			<section>
+				<RouterLink class="btn btn-primary btn-outline" to="/">Ga terug</RouterLink>
+			</section>
+		</template>
 	</main>
 </template>
