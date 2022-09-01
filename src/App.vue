@@ -42,7 +42,7 @@
               </li>
             </ul>
           </div>
-          <img src="@/assets/img/headshot.png" class="absolute right-0 bottom-0 object-cover h-[70%] brightness-150" />
+          <img src="@/assets/img/headshot.webp" class="absolute right-0 bottom-0 object-cover h-[70%] brightness-150" />
         </div>
       </div>
   </main>
