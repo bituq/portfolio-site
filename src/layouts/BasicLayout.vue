@@ -36,7 +36,7 @@ onMounted(() => {
 				</p>
 			</section>
 			<section class="flex flex-row gap-2.5">
-				<RouterLink class="btn btn-primary btn-outline" to="/">Ga terug</RouterLink>
+				<RouterLink v-if="$slots.content" class="btn btn-primary btn-outline" to="/">Ga terug</RouterLink>
 				<slot name="buttons" />
 			</section>
 			<section>
@@ -44,11 +44,9 @@ onMounted(() => {
 			</section>
 		</div>
 
-		<template v-if="$slots.content">
-			<section class="divider" />
-			<section>
-				<RouterLink class="btn btn-primary btn-outline" to="/">Ga terug</RouterLink>
-			</section>
-		</template>
+		<section class="divider" />
+		<section>
+			<RouterLink class="btn btn-primary btn-outline" to="/">Ga terug</RouterLink>
+		</section>
 	</main>
 </template>
