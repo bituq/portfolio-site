@@ -28,7 +28,7 @@
     </div>
     <div id="pin" class="invisible 2xl:visible fixed h-full -translate-x-[830px]">
         <!-- Shapes -->
-        <div id="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-[28rem] top-[50%] z-10">
+        <div ref="leftRect" class="absolute bg-base-300 rectangle-shape overflow-clip h-[28rem] top-[50%] z-10">
           <div class="absolute w-full h-full z-0" />
           <div class="py-6 px-3">
             <ul class="text-base-100-content font-semibold">
@@ -49,12 +49,13 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue';
+import { computed, onMounted, ref, type Ref } from 'vue';
 import gsap from 'gsap'
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 
 gsap.registerPlugin(ScrollTrigger)
 
+const leftRect = ref()
 const lightThemeMedia = window.matchMedia('(prefers-color-scheme: light)')
 let themeIsLight = ref(lightThemeMedia.matches)
 let theme = computed(() => themeIsLight.value ? 'light' : 'dark')
@@ -71,10 +72,10 @@ onMounted(() => {
     },
   })
 
-  scrollTl.fromTo("#leftRect", {
-    translateY: () => "-=" + window.innerHeight * .05
+  scrollTl.fromTo(leftRect.value, {
+    translateY: () => "-=" + (window.innerHeight - leftRect.value?.offsetHeight / 2) * .2
   }, {
-    translateY: () => "-=" + window.innerHeight / 6
+    translateY: () => "-=" + (window.innerHeight - leftRect.value?.offsetHeight / 2) * .3
   })
 })
 
