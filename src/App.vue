@@ -22,7 +22,7 @@
   </header>
   <main :data-theme="theme" class="flex justify-center w-full bg-base-300">
     <div class="flex justify-center max-w-7xl h-full bg-base-100 overflow-clip">
-      <main class="flex flex-col gap-5 text-base-content px-24 pb-48 min-h-[100vh] mt-[30vh]">
+      <main class="flex flex-col gap-5 text-base-content pb-48 min-h-[100vh] mt-[30vh]">
         <router-view />
       </main>
     </div>

@@ -127,6 +127,10 @@ onMounted(() => {
 </template>
 
 <style>
+section {
+  @apply px-12;
+}
+
 .list-item {
   @apply flex;
   @apply gap-2;
